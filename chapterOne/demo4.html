@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--view层-->
+<div id="app">
+
+    <kou v-for="item in items" v-bind:kou="item"></kou>
+</div>
+
+<!--导入vue.js-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+<script>
+    //定义vue组件component
+    Vue.component("kou",{
+        //props接受参数的
+        props:['kou'],
+        template:'<li>{{kou}}</li>'
+    });
+
+    var vm=new Vue({
+        el:"#app",
+        data:{
+            items:["kou","jia","jun"]
+        }
+    });
+
+</script>
+
+</body>
+</html>
